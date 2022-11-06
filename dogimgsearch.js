@@ -54,11 +54,35 @@ async function foo(){
        var div3=document.createElement("div");
        div3.setAttribute("class","col-lg-6");
 
+       if(result1.status=="success"){
        var div_content=`<div style="text-align:left;"><img src="${result1.message}"/></div>`;
+       }else{
+        var div_content=`<div class="list-group" style="text-align:left;">
+        <a href="#" class="list-group-item list-group-item-action active">
+        No Picture found
+        </a>
+       </div>`;
+       }
        div2.innerHTML=div_content;   
     
     }catch{
-        div_row.innerHTML='<span>Error</span>';   
+        var div1=document.createElement("div");
+        div1.setAttribute("class","col-lg-6");
+     
+        var div2=document.createElement("div");
+        div2.setAttribute("class","col-lg-6");
+        div2.style.marginTop='10px';
+        div2.style.display='inline-grid';
+       
+        var div3=document.createElement("div");
+        div3.setAttribute("class","col-lg-6");
+        var div_content_no=`<div class="list-group" style="text-align:left;">
+       <a href="#" class="list-group-item list-group-item-action active">
+       No Pictures found 
+       </a>
+      </div>`;
+     
+     div2.innerHTML=div_content_no;   
     }
     div_parent.append(div1,div2,div3);
     div_row.append(div_parent);
