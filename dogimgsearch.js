@@ -18,6 +18,8 @@ input.setAttribute("type","text");
 input.setAttribute("id","name");
 input.style.width='80%';
 input.style.height='50px';
+input.setAttribute("placeholder","enter breed name");
+
 
 var button=document.createElement("button");
 button.setAttribute("type","button");
